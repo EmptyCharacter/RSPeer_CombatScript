@@ -1,15 +1,22 @@
 package Script.Tasks;
 
+import org.rspeer.runetek.api.local.Health;
+import org.rspeer.runetek.api.scene.Players;
 import org.rspeer.script.task.Task;
 
 public class Eating extends Task {
+
+    private static final String EAT_ACTION = new String("Eat");
+
     @Override
     public boolean validate() {
-        return false;
+        return !(Health.getPercent() > 60);
     }
 
     @Override
     public int execute() {
-        return 0;
+        //eat food
+
+        return 1000;
     }
 }

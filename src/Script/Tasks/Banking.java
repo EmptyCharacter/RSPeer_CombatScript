@@ -10,6 +10,6 @@ public class Banking extends Task {
 
     @Override
     public int execute() {
-        return 0;
+        return 1000;
     }
 }
