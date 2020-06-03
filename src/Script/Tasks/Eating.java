@@ -1,5 +1,6 @@
 package Script.Tasks;
 
+import org.rspeer.runetek.api.component.tab.Inventory;
 import org.rspeer.runetek.api.local.Health;
 import org.rspeer.runetek.api.scene.Players;
 import org.rspeer.script.task.Task;
@@ -16,7 +17,7 @@ public class Eating extends Task {
     @Override
     public int execute() {
         //eat food
-
+        Inventory.getFirst(Food.)
         return 1000;
     }
 }
