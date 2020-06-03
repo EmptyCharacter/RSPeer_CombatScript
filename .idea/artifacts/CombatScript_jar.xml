@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="CombatScript:jar">
+    <output-path>$USER_HOME$/Documents/RSPeer/scripts</output-path>
+    <root id="archive" name="CombatScript.jar">
+      <element id="module-output" name="CombatScript" />
+    </root>
+  </artifact>
+</component>
