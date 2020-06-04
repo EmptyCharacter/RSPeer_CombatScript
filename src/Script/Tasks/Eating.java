@@ -1,5 +1,6 @@
 package Script.Tasks;
 
+import Script.CombatScript;
 import Script.Data.Food;
 import org.rspeer.runetek.adapter.component.Item;
 import org.rspeer.runetek.api.component.tab.Inventory;
@@ -19,7 +20,7 @@ public class Eating extends Task {
     @Override
     public int execute() {
         //eat food
-        Item food = Inventory.getFirst(String.valueOf(Food.SALMON));
+        Item food = Inventory.getFirst(CombatScript.food.getFoodName());
         food.interact(EAT_ACTION);
         return 1000;
     }

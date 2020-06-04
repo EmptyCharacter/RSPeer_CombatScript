@@ -1,6 +1,7 @@
 package Script;
 
 import Script.Data.Enemy;
+import Script.Data.Food;
 import Script.Data.Location;
 import Script.Tasks.Banking;
 import Script.Tasks.Eating;
@@ -16,6 +17,7 @@ public class CombatScript extends TaskScript {
 
     public static Enemy enemy;
     public static Location location;
+    public static Food food;
 
     @Override
     public void onStart() {
