@@ -13,7 +13,7 @@ import java.awt.event.ItemEvent;
 
 public class GUI extends Task {
 
-    private boolean validate;
+    private boolean validate = true;
 
     private JComboBox enemyComboBox;
     private JComboBox locationsComboBox;
@@ -34,6 +34,9 @@ public class GUI extends Task {
         frame.add(enemyComboBox, "wrap, growx");
         frame.add(locationsComboBox, "wrap, growx");
         frame.add(startBtn, "growx");
+
+        locationsComboBox.addItemListener(this::locationsSelectionHandler);
+        startBtn.addActionListener(x -> startBtnHandler());
 
         frame.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
         frame.setLocationRelativeTo(Game.getCanvas());
