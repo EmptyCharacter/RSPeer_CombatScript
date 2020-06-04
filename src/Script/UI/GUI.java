@@ -1,5 +1,6 @@
 package Script.UI;
 
+import Script.CombatScript;
 import Script.Data.Enemy;
 import Script.Data.Location;
 import net.miginfocom.swing.MigLayout;
@@ -8,6 +9,7 @@ import org.rspeer.script.task.Task;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ItemEvent;
 
 public class GUI extends Task {
 
@@ -48,5 +50,17 @@ public class GUI extends Task {
     @Override
     public int execute() {
         return 1000;
+    }
+
+    private void locationsSelectionHandler(ItemEvent e){
+        Location selection = (Location) e.getItem();
+        enemyComboBox.setModel(new DefaultComboBoxModel(selection.getEnemies()));
+    }
+
+    private void startBtnHandler(){
+        CombatScript.enemy = (Enemy) enemyComboBox.getSelectedItem();
+        CombatScript.location = (Location) locationsComboBox.getSelectedItem();
+        validate = false;
+        frame.setVisible(false);
     }
 }
