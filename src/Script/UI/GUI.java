@@ -47,7 +47,7 @@ public class GUI extends Task {
 
     @Override
     public boolean validate() {
-        return false;
+        return validate;
     }
 
     @Override

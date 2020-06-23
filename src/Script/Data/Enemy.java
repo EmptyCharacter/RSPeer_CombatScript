@@ -4,7 +4,7 @@ public enum Enemy {
     CHICKEN("Chicken", 1),
     GIANT_RAT("Giant rat", 10),
     GIANT_FROG("Giant frog", 10),
-    AL_KHARID_WARRIOR("Al-Kharid warrior", 25),
+    AL_KHARID_WARRIOR("Al-Kharid warrior", 30),
     HILL_GIANT("Hill Giant", 40)
     ;
 

@@ -22,8 +22,9 @@ public class CombatScript extends TaskScript {
     @Override
     public void onStart() {
         submit(new GUI(),
-                new ToggleRun(),
                 new Traverse(),
+                new ToggleRun(),
+
                 new Eating());
     }
 
