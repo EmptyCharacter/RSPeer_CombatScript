@@ -3,10 +3,7 @@ package Script;
 import Script.Data.Enemy;
 import Script.Data.Food;
 import Script.Data.Location;
-import Script.Tasks.Banking;
-import Script.Tasks.Eating;
-import Script.Tasks.ToggleRun;
-import Script.Tasks.Traverse;
+import Script.Tasks.*;
 import Script.UI.GUI;
 import org.rspeer.script.ScriptMeta;
 import org.rspeer.script.task.TaskScript;
@@ -24,7 +21,7 @@ public class CombatScript extends TaskScript {
         submit(new GUI(),
                 new Traverse(),
                 new ToggleRun(),
-
+                new Fighting(),
                 new Eating());
     }
 
