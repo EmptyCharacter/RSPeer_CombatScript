@@ -1,11 +1,12 @@
 package Script.Tasks;
 
+import org.rspeer.runetek.api.scene.Players;
 import org.rspeer.script.task.Task;
 
 public class Fighting extends Task {
     @Override
     public boolean validate() {
-        return false;
+        return Players.getLocal();
     }
 
     @Override
