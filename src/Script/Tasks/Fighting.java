@@ -7,11 +7,11 @@ public class Fighting extends Task {
     @Override
     public boolean validate() {
         return Players.getLocal();
-        return Players.getLocal();
+
     }
 
     @Override
-    public int execute() {
+    public int execute()  {
         return 0;
     }
 }
