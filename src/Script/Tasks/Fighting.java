@@ -12,6 +12,6 @@ public class Fighting extends Task {
 
     @Override
     public int execute()  {
-        return 0;
+        return 1000;
     }
 }
