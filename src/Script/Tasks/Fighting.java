@@ -9,7 +9,7 @@ public class Fighting extends Task {
 
     @Override
     public boolean validate() {
-    sdfsdfs
+
 
     }
 
