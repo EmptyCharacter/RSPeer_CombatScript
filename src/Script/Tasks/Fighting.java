@@ -6,7 +6,7 @@ import org.rspeer.script.task.Task;
 public class Fighting extends Task {
 
     private static final String ATTACK_ACTION = new String("Attack");
-
+K
     @Override
     public boolean validate() {
 
