@@ -20,7 +20,7 @@ public class CombatScript extends TaskScript {
     public void onStart() {
         submit(new GUI(),
                 new Traverse(),
-                new ToggleRun(),
+
                 new Fighting(),
                 new Eating());
     }

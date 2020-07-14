@@ -2,6 +2,7 @@ package Script.Tasks;
 
 import Script.CombatScript;
 import org.rspeer.runetek.adapter.scene.Npc;
+import org.rspeer.runetek.adapter.scene.Player;
 import org.rspeer.runetek.api.component.tab.Combat;
 import org.rspeer.runetek.api.scene.Npcs;
 import org.rspeer.runetek.api.scene.Players;
@@ -10,10 +11,12 @@ import org.rspeer.script.task.Task;
 public class Fighting extends Task {
 
     private static final String ATTACK_ACTION = new String("Attack");
+    private Player local = Players.getLocal();
+
 
     @Override
     public boolean validate() {
-        return !Players.getLocal().isAnimating() && !Players.getLocal().isMoving();
+        return !local.isAnimating() && !local.isMoving();
 
     }
 
@@ -25,6 +28,6 @@ public class Fighting extends Task {
         if(target != null){
             target.interact(ATTACK_ACTION);
         }
-        return 1000;
+        return 1200;
     }
 }
