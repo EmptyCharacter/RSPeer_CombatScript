@@ -19,6 +19,7 @@ public class Fighting extends Task {
 
     @Override
     public int execute()  {
+        //should also check if that npc is not in combat already n if you are already in combat
         Npc target = Npcs.getNearest(x -> x.getName().equals(CombatScript.enemy.getEnemyName()) && CombatScript.location.getTrainingArea().contains(x));
 
         if(target != null){
