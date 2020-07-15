@@ -9,7 +9,7 @@ import org.rspeer.script.ScriptMeta;
 import org.rspeer.script.task.TaskScript;
 import org.rspeer.ui.Log;
 
-@ScriptMeta(name = "Combat Script", desc = "Kills NPC's", developer = "empty")
+@ScriptMeta(name = "Combat sScript", desc = "Kills NPC's", developer = "empty")
 public class CombatScript extends TaskScript {
 
     public static Enemy enemy;
@@ -19,9 +19,9 @@ public class CombatScript extends TaskScript {
     @Override
     public void onStart() {
         submit(new GUI(),
-                new Traverse(),
-
                 new Fighting(),
+                new Traverse(),
+                new ToggleRun(),
                 new Eating());
     }
 
