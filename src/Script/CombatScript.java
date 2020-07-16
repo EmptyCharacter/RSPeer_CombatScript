@@ -10,6 +10,7 @@ import org.rspeer.runetek.api.component.tab.Skill;
 import org.rspeer.runetek.api.component.tab.Skills;
 import org.rspeer.runetek.event.types.RenderEvent;
 import org.rspeer.script.ScriptMeta;
+import org.rspeer.script.task.Task;
 import org.rspeer.script.task.TaskScript;
 import org.rspeer.ui.Log;
 
@@ -17,6 +18,13 @@ import java.awt.*;
 
 @ScriptMeta(name = "Combat sScript", desc = "Kills NPC's", developer = "empty")
 public class CombatScript extends TaskScript {
+
+    private static final Task[] TASKS = {
+            new GUI(),
+            new ToggleRun(),
+            new Eating(),
+            new Traverse(),
+            new Fighting()};
 
     public static Enemy enemy;
     public static Location location;
@@ -31,11 +39,7 @@ public class CombatScript extends TaskScript {
         runtime = StopWatch.start();
         startXP = Skills.getExperience(Skill.ATTACK);
 
-        submit(new GUI(),
-                new ToggleRun(),
-                new Eating(),
-                new Traverse(),
-                new Fighting());
+        submit(TASKS);
     }
 
     @Override
