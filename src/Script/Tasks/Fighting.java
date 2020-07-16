@@ -25,10 +25,10 @@ public class Fighting extends Task {
         //should also check if that npc is not in combat already n if you are already in combat
         Npc target = Npcs.getNearest(x -> x.getName().equals(CombatScript.enemy.getEnemyName()) && CombatScript.location.getTrainingArea().contains(x));
 
-        //if target is not null and if not already animating
+        //if target is not null and if target is not already in combat
         if(target != null){
             target.interact(ATTACK_ACTION);
         }
-        return 1200;
+        return 300;
     }
 }
