@@ -3,6 +3,7 @@ package Script.Tasks;
 import Script.CombatScript;
 import org.rspeer.runetek.adapter.scene.Npc;
 import org.rspeer.runetek.adapter.scene.Player;
+import org.rspeer.runetek.api.commons.Time;
 import org.rspeer.runetek.api.component.tab.Combat;
 import org.rspeer.runetek.api.scene.Npcs;
 import org.rspeer.runetek.api.scene.Players;
@@ -26,9 +27,13 @@ public class Fighting extends Task {
         Npc target = Npcs.getNearest(x -> x.getName().equals(CombatScript.enemy.getEnemyName()) && CombatScript.location.getTrainingArea().contains(x));
 
         //if target is not null and if target is not already in combat
-        if(target != null){
-            target.interact(ATTACK_ACTION);
+        if(local.getTargetIndex() == -1){
+            if(target != null
+                    && target.interact(ATTACK_ACTION)) Time.sleepUntil(() -> local.getTargetIndex() != -1, 5000){
+                target.interact(ATTACK_ACTION);
+            }
         }
+
         return 300;
     }
 }
