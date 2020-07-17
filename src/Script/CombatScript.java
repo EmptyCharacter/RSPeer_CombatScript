@@ -8,6 +8,7 @@ import Script.UI.GUI;
 import org.rspeer.runetek.api.commons.StopWatch;
 import org.rspeer.runetek.api.component.tab.Skill;
 import org.rspeer.runetek.api.component.tab.Skills;
+import org.rspeer.runetek.event.listeners.RenderListener;
 import org.rspeer.runetek.event.types.RenderEvent;
 import org.rspeer.script.ScriptMeta;
 import org.rspeer.script.task.Task;
@@ -17,7 +18,7 @@ import org.rspeer.ui.Log;
 import java.awt.*;
 
 @ScriptMeta(name = "Combat sScript", desc = "Kills NPC's", developer = "empty")
-public class CombatScript extends TaskScript {
+public class CombatScript extends TaskScript implements RenderListener {
 
     private static final Task[] TASKS = {
             new GUI(),
@@ -37,7 +38,7 @@ public class CombatScript extends TaskScript {
     public void onStart() {
         Log.fine("Script Started");
         runtime = StopWatch.start();
-        startXP = Skills.getExperience(Skill.ATTACK);
+        startXP = Skills.getExperience(Skill.STRENGTH);
 
         submit(TASKS);
     }
@@ -51,7 +52,7 @@ public class CombatScript extends TaskScript {
     {
         Graphics g = renderEvent.getSource();
 
-        int gainedXP = (Skills.getExperience(Skill.ATTACK) - startXP);
+        int gainedXP = (Skills.getExperience(Skill.STRENGTH) - startXP);
 
         g.drawString("Runtime: " + runtime.toElapsedString(), 20, 20);
         g.drawString("XP Gained: " + gainedXP, 20, 40);

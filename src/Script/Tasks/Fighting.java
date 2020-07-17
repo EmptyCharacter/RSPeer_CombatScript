@@ -3,6 +3,7 @@ package Script.Tasks;
 import Script.CombatScript;
 import org.rspeer.runetek.adapter.scene.Npc;
 import org.rspeer.runetek.adapter.scene.Player;
+import org.rspeer.runetek.api.commons.math.Random;
 import org.rspeer.runetek.api.component.tab.Combat;
 import org.rspeer.runetek.api.scene.Npcs;
 import org.rspeer.runetek.api.scene.Players;
@@ -32,6 +33,6 @@ public class Fighting extends Task {
             }
         }
 
-        return 300;
+        return Random.high(1000, 1200);
     }
 }
