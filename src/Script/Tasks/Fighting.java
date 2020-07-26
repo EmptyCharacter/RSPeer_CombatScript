@@ -27,11 +27,11 @@ public class Fighting extends Task {
         Npc target = Npcs.getNearest(x -> x.getName().equals(CombatScript.enemy.getEnemyName()) && CombatScript.location.getTrainingArea().contains(x));
 
         //if target is not null and if target is not already in combat
-        if(local.getTargetIndex() == -1){
+
             if(target != null && target.interact(ATTACK_ACTION)){
                 target.interact(ATTACK_ACTION);
             }
-        }
+
 
         return Random.high(1000, 1200);
     }
